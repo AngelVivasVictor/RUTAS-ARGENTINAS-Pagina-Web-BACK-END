@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutas Argentinas - Formulario de contacto</title>
+    <link rel="icon" type="img/png" href="/img/icons.png">
+    <link rel="stylesheet" type="text/css" href="/css/contact_style.css">
+    <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <nav>            
+            <div id="logo">
+                    <span class="logo-text">
+                        Rutas Argentinas
+                    </span>
+            </div>
+            <ul class="nav-links"> 
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/templates/destinos.html">Nuestro Destinos</a></li>
+                <li><a href="/templates/informacion.html">sobre nosotros</a></li>               
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <br></br>
+        <section class="form-wrapper">     
+            <h2>Formulario de contacto</h2>
+            <form action="submit_form" id="formContact" method="POST" novalidate> <!--Permite que HTML no valide el formulario-->
+                <div class="form-control">
+                    <label>Nombre</label>
+                    <input type="text" required name="firstname" id="firstname"> <!-- el required es para que el usuario ingrese-->
+                </div>
+                <div class="error" id="error-firstname"></div>
+                <div class="form-control">
+                    <label>Apellido</label>
+                    <input type="text" required name="lastname" id="lastname">
+                </div>
+                <div class="error" id="error-lastname"></div>
+                <div class="form-control">
+                    <label>Email</label>
+                    <input type="email" required name="email" id="email">
+                </div>
+                <div class="error" id="error-email"></div>
+                <div class="form-control">
+                    <label for="area_code">Código de área:</label>
+                    <input type="tel" id="area_code" name="area_code" placeholder="Ej: 123" maxlength="3" size="3" required>
+                </div>
+                <div class="form-control">
+                    <label for="phone_number">Número de teléfono:</label>
+                    <input type="tel" id="phone_number" name="phone_number" placeholder="Ej: 45678900" maxlength="8" size="8" required>
+                </div>
+                <div class="form-control">
+                    <select name="country" id="country" class="form-select">
+                        <option value="">País de residencia</option>
+                        <option value="AR">Argentina</option>
+                        <option value="BO">Bolivia</option>
+                        <option value="BR">Brasil</option>
+                        <option value="CH">Chile</option>
+                        <option value="CO">Colombia</option>
+                        <option value="EC">Ecuador</option>
+                        <option value="PY">Paraguay</option>
+                        <option value="PE">Perú</option>
+                        <option value="UY">Uruguay</option>
+                        <option value="VE">Venezuela</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label id="label-birthdate">Fecha de Nacimiento</label>
+                    <input type="date" required name="birthdate" id="birthdate">
+                </div>
+                <div class="form-control">
+                    <label for="motive_consult">Motivo de consulta:</label>
+                    <select id="motive_consult" name="motive_consult" class="form-select">
+                        <option value="">Seleccionar</option>
+                        <option value="Urgent-advice">Deseo recibir asesoramiento y contratar el viaje urgente</option>
+                        <option value="Month-advice">Deseo recibir asesoramiento y contratar el viaje dentro del mes</option>
+                        <option value="Price-urgent-advice">Deseo consultar precios acerca de mi viaje y resolver lo antes posible</option>
+                        <option value="Price-inquiry">Deseo comparar precios e itinerario</option>
+                        <option value="Others">Otras consultas</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="destination">Destino:</label>
+                    <select name="destination" id="destination" class="form-select">
+                        <option value="">Seleccionar destino</option>
+                        <option value="Norte">Región Norte</option>
+                        <option value="Cuyo">Región del nuevo Cuyo</option>
+                        <option value="Patagonia">Patagonia Argentina</option>
+                        <option value="Buenos Aires">Buenos Aires</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="quantity">Cantidad de personas:</label>
+                    <select id="quantity" name="quantity" required class="form-select">
+                        <option value="">Seleccionar</option>
+                        <option value="1">1 persona</option>
+                        <option value="2">2 personas</option>
+                        <option value="3">3 personas</option>
+                        <option value="4">4 personas</option>
+                        <option value="5">5 personas</option>
+                        <option value="6">6 o mas personas</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="comments">Comentarios:</label>
+                    <textarea id="comments" name="comments"></textarea>
+                </div>
+                 </div>
+                <div class="form-subscription"> 
+                    <div class="subscription">
+                        <input type="checkbox" id="subscription">
+                        <label for="subscription">Suscribirse para recibir información</label>
+                    </div>
+                </div>
+                <button type="submit" id="btn-send">
+                    Enviar
+                </button>
+            </form>
+        </section>
+    </main>
+    <script src="/js/Validacion-contact.js"></script>
+</body>
